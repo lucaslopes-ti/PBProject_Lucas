@@ -1,0 +1,5 @@
+# Sprint X - Registro de Atividades
+
+Nesta sprint, não foram realizados exercícios práticos. O foco principal esteve nas atividades teóricas e organizacionais, preparando o terreno para as próximas sprints. Este arquivo foi incluído no repositório para manter a consistência no registro de entregas.
+
+Data: 20/10/2024
