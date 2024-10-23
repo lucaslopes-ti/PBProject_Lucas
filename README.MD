@@ -1,5 +1,7 @@
 # Apresentação
 
+![Minha Foto](https://1drv.ms/i/s!AuOsKQDYjQTLjpV0BXlDAJilEIgz-w?e=V309RH)
+
 Olá, sou **Lucas Lopes**, natural de Franca, São Paulo. Atualmente, estou cursando **Engenharia da Computação** na **UNIVESP** no 7 semestre. Tenho também formação como **Técnico em Informática** e **Matemática**, o que me proporciona uma visão interdisciplinar sobre tecnologia e matemática.
 
 Possuo experiência na área de tecnologia, atuando como **Técnico Help Desk** no **SESI**, e também com **Data Science**, desenvolvendo projetos que envolvem **análise de dados**, **IoT**, **Machine Learning** e **visualização de dados** com ferramentas como **Power BI**. Além disso, sou **concursado como tradutor e intérprete de Libras** e trabalho como **professor de ensino médio** na **SEE-SP**, com foco em **matemática**.
