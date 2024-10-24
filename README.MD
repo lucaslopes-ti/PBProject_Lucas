@@ -1,6 +1,6 @@
 # Apresentação
 
-![Minha Foto](https://www.dropbox.com/scl/fi/v8qup8x1tgbikpemv727w/foto.png?rlkey=xojvaa5xl8zcg2liotpbn558c&st=yiko1aau&dl=0)
+![Minha Foto](https://drive.google.com/uc?export=view&id=12z-A1t1AQtie7UbPYkiyMHf-7N6RfPKs)
 
 Olá, sou **Lucas Lopes**, natural de Franca, São Paulo. Atualmente, estou cursando **Engenharia da Computação** na **UNIVESP** no 7 semestre. Tenho também formação como **Técnico em Informática** e **Matemática**, o que me proporciona uma visão interdisciplinar sobre tecnologia e matemática.
 
