@@ -1,0 +1,76 @@
+Consolidando: /home/boltzmann/Documents/ecommerce/vendas/vendas/backup/relatorio-20241022.txt
+Data do sistema: 2024/10/22 15:27
+Data do primeiro registro de venda: 25/01/2023
+Data do último registro de venda: 27/03/2023
+Quantidade total de itens diferentes vendidos: 67
+Primeiras 10 linhas do arquivo:
+id,produto,quantidade,preço,data
+1,pilha AA,20,2,25/01/2023
+2,luminária de mesa,4,40,26/01/2023
+3,relogio de parede,8,20,27/01/2023
+4,porta-retrato digital,2,100,28/01/2023
+5,vaporizador de roupas,1,150,29/01/2023
+6,balança digital,3,60,30/01/2023
+7,furadeira elétrica,2,200,31/01/2023
+8,jogo de panelas antiaderente,5,120,01/02/2023
+9,faca elétrica,4,80,02/02/2023
+10,sanduicheira elétrica,6,40,03/02/2023
+
+
+Consolidando: /home/boltzmann/Documents/ecommerce/vendas/vendas/backup/relatorio-20241023.txt
+Data do sistema: 2024/10/23 15:27
+Data do primeiro registro de venda: 11/01/2023
+Data do último registro de venda: 27/03/2023
+Quantidade total de itens diferentes vendidos: 67
+Primeiras 10 linhas do arquivo:
+id,produto,quantidade,preço,data
+1,mochila,9,60,11/01/2023
+2,livro,15,20,12/01/2023
+3,caderno,18,8,13/01/2023
+4,lápis,30,1,14/01/2023
+5,borracha,25,0.5,15/01/2023
+6,cola,10,2.5,16/01/2023
+7,régua,12,4,17/01/2023
+8,pincel atômico,8,5,18/01/2023
+9,papel sulfite A4 500 folhas,6,25,19/01/2023
+10,pasta sanfonada,4,35,20/01/2023
+
+
+Consolidando: /home/boltzmann/Documents/ecommerce/vendas/vendas/backup/relatorio-20241024.txt
+Data do sistema: 2024/10/24 15:27
+Data do primeiro registro de venda: 16/03/2023
+Data do último registro de venda: 20/01/2023
+Quantidade total de itens diferentes vendidos: 67
+Primeiras 10 linhas do arquivo:
+id,produto,quantidade,preço,data
+1,teclado musical casio,2,784.98,16/03/2023
+2,sintetizador de voz,3,324.12,17/03/2023
+3,controlador com cabo usb,4,124,18/03/2023
+4,caixa de som jbl,2,39.99,19/03/2023
+5,microfone sem fio shure,3,2000,20/03/2023
+6,pedestal para microfone,6,150,21/03/2023
+7,cabo para microfone,10,12.5,22/03/2023
+8,caixa acústica,8,789,24/03/2023
+9,mixer de áudio behringer,2,888,25/03/2023
+10,fone de ouvido profissional akg,3,300,27/03/2023
+
+
+Consolidando: /home/boltzmann/Documents/ecommerce/vendas/vendas/backup/relatorio-20241025.txt
+Data do sistema: 2024/10/25 15:27
+Data do primeiro registro de venda: 09/01/2023
+Data do último registro de venda: 20/01/2023
+Quantidade total de itens diferentes vendidos: 67
+Primeiras 10 linhas do arquivo:
+id,produto,quantidade,preço,data
+1,bone,12,10,09/01/2023
+2,casaco,2,150,10/01/2023
+3,mixer de alimentos,7,50,04/02/2023
+4,batedeira planetária,2,300,05/02/2023
+5,guitarra elétrica fender,3,2999,20/02/2023
+6,amplificador de guitarra,4,799,21/02/2023
+7,pedaleira preta,5,499,22/02/2023
+8,cabo para instrumento ninja,10,59,23/02/2023
+9,palheta dunlop,20,1,24/02/2023
+10,afinador digital,6,49,25/02/2023
+
+

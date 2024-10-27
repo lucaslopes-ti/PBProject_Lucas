@@ -1,0 +1,16 @@
+Data do sistema: 2024/10/24 15:27
+Data do primeiro registro de venda: 16/03/2023
+Data do último registro de venda: 20/01/2023
+Quantidade total de itens diferentes vendidos: 67
+Primeiras 10 linhas do arquivo:
+id,produto,quantidade,preço,data
+1,teclado musical casio,2,784.98,16/03/2023
+2,sintetizador de voz,3,324.12,17/03/2023
+3,controlador com cabo usb,4,124,18/03/2023
+4,caixa de som jbl,2,39.99,19/03/2023
+5,microfone sem fio shure,3,2000,20/03/2023
+6,pedestal para microfone,6,150,21/03/2023
+7,cabo para microfone,10,12.5,22/03/2023
+8,caixa acústica,8,789,24/03/2023
+9,mixer de áudio behringer,2,888,25/03/2023
+10,fone de ouvido profissional akg,3,300,27/03/2023

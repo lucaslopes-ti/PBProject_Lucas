@@ -1,0 +1,4 @@
+adding: vendas/backup/backup-dados-20241022.csv (deflated 54%)
+updating: vendas/backup/backup-dados-20241023.csv (deflated 54%)
+updating: vendas/backup/backup-dados-20241024.csv (deflated 54%)
+updating: vendas/backup/backup-dados-20241025.csv (deflated 54%)

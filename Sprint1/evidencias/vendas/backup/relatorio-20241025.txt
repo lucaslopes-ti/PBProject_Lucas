@@ -1,0 +1,16 @@
+Data do sistema: 2024/10/25 15:27
+Data do primeiro registro de venda: 09/01/2023
+Data do último registro de venda: 20/01/2023
+Quantidade total de itens diferentes vendidos: 67
+Primeiras 10 linhas do arquivo:
+id,produto,quantidade,preço,data
+1,bone,12,10,09/01/2023
+2,casaco,2,150,10/01/2023
+3,mixer de alimentos,7,50,04/02/2023
+4,batedeira planetária,2,300,05/02/2023
+5,guitarra elétrica fender,3,2999,20/02/2023
+6,amplificador de guitarra,4,799,21/02/2023
+7,pedaleira preta,5,499,22/02/2023
+8,cabo para instrumento ninja,10,59,23/02/2023
+9,palheta dunlop,20,1,24/02/2023
+10,afinador digital,6,49,25/02/2023
