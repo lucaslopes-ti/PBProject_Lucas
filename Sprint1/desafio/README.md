@@ -14,7 +14,9 @@ Neste projeto, desenvolvemos scripts para processar dados de vendas de uma loja 
 
 **Descrição**: Esta etapa envolveu a criação de um diretório inicial e cópia dos dados de vendas para esse diretório.
 
-![Evidência](https://raw.githubusercontent.com/Boltzmann0/PBProject_Lucas/main/Sprint1/evidencias/img/criacao_pastaecommerce.png?token=GHSAT0AAAAAACZLTUUW2FAMK6JDKPGF5ZMKZY6LIGA)
+![Evidência](../evidencias/img/criacao_pastaecommerce.png)
+
+
 
 
 
