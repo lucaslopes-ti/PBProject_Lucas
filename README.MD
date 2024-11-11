@@ -13,7 +13,7 @@ Sinta-se à vontade para explorar os meus trabalhos ao longo das Sprints!
 ## Sprints
 
 1. [Sprint 1](https://github.com/Boltzmann0/Project_Lucas/tree/main/Sprint1)
-2. [Sprint 2]
+2. [Sprint 2](https://github.com/Boltzmann0/PBProject_Lucas/tree/main/Sprint2)
 3. [Sprint 3]
 4. [Sprint 4]
 5. [Sprint 5]
