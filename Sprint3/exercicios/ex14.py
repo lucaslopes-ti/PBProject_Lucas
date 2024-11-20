@@ -1,18 +1,13 @@
 def imprimir_parametros(*args, **kwargs):
-    """Imprime os parametros nao nomeados e nomeados"""
-
-    print("Parametros nao nomeados")
-    index = 2  
+    """Imprime os parâmetros não nomeados e nomeados, um por linha."""
+    
+    # imprimindo os parâmetros não nomeados
     for arg in args:
-        print(f" {index}: {arg}")
-        index += 1  
-
+        print(arg)
     
-    print("Parametros nomeados:")
-    for key, value in kwargs.items():
-        print(f" {key}: {value}")
-    
+    # imprimindo os valores dos parâmetros nomeados
+    for value in kwargs.values():
+        print(value)
 
-# testando a funcao
-
+# testando a função com os parâmetros fornecidos
 imprimir_parametros(1, 3, 4, 'hello', parametro_nomeado='alguma coisa', x=20)
