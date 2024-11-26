@@ -1,22 +1,90 @@
-# Apresentação
 
-Olá, sou **Lucas Lopes**, natural de Franca, São Paulo. Atualmente, estou cursando **Engenharia da Computação** na **UNIVESP** no 7 semestre. Tenho também formação como **Técnico em Informática** e **Matemática**, o que me proporciona uma visão interdisciplinar sobre tecnologia e matemática.
+# Sprint 3 - Análise de Dados e ETL com Python
 
-Possuo experiência na área de tecnologia, atuando como **Técnico Help Desk** no **SESI**, e também com **Data Science**, desenvolvendo projetos que envolvem **análise de dados**, **IoT**, **Machine Learning** e **visualização de dados** com ferramentas como **Power BI**. Além disso, sou **concursado como tradutor e intérprete de Libras** e trabalho como **professor de ensino médio** na **SEE-SP**, com foco em **matemática**.
+## Instruções/Informações/Anotações
 
-Meus hobbies incluem explorar viagens culturais, aprofundar-me em temas de **Inteligência Artificial**, **acessibilidade** e linguagens de programação. Também gosto de me manter atualizado sobre projetos inovadores em tecnologia e inclusão.
+[**Acesse aqui a pasta `exercicios` contendo os códigos dos exercícios realizados na Sprint 3.**](../Sprint3/exercicios/)
 
-Sinta-se à vontade para explorar os meus trabalhos ao longo das Sprints!
+Nesta sprint, o foco principal foi o desenvolvimento de habilidades em análise de dados utilizando Python, com ênfase em manipulação, limpeza, visualização e extração de insights a partir de datasets. Além disso, realizamos um **desafio de ETL** com a tabela `actors.csv`, consolidando os conhecimentos adquiridos.
 
-## Sprints
+- **Configuração do Ambiente**: Utilizamos Python como principal ferramenta, junto com bibliotecas como **pandas**, **matplotlib** e **numpy** para análise de dados. Os scripts foram desenvolvidos em um ambiente configurado com Jupyter Notebook e também executados diretamente via linha de comando.
+- **Atividades Realizadas**:
+  - **Exercícios de Análise de Dados**: Resolvi 25 exercícios que cobriram tópicos como limpeza de dados, agrupamento, agregação, tratamento de valores ausentes e geração de gráficos.
+  - **Desafio de ETL**: Processamos a tabela `actors.csv` utilizando Python puro (sem bibliotecas como pandas), aplicando técnicas de ETL para gerar insights em etapas consecutivas.
+  - **Estudo de Economia na Nuvem AWS**: Concluí o curso **AWS Partner: Economias na Nuvem AWS**, adquirindo conhecimentos sobre práticas de economia e otimização de custos na utilização de serviços AWS.
+- **Desafios Encontrados**:
+  - **Tratamento Manual de Dados no Desafio ETL**: Como o uso de bibliotecas como pandas estava proibido no desafio, todas as operações foram realizadas manualmente com loops e manipulação de strings, exigindo atenção para tratar formatos inconsistentes.
+  - **Geração de Visualizações Personalizadas**: Ao criar gráficos detalhados com matplotlib, foi necessário ajustar estilos, rótulos e configurações para melhor apresentação dos dados.
 
-1. [Sprint 1](https://github.com/Boltzmann0/Project_Lucas/tree/main/Sprint1)
-2. [Sprint 2]
-3. [Sprint 3]
-4. [Sprint 4]
-5. [Sprint 5]
-6. [Sprint 6]
-7. [Sprint 7]
-8. [Sprint 8]
-9. [Sprint 9]
-10. [Sprint 10]
+---
+
+## Exercícios
+
+Durante a Sprint 3, foram realizados 25 exercícios que cobriram tópicos fundamentais de análise de dados com Python:
+
+1. **Limpeza e Transformação de Dados**:
+   - Tratamento de valores ausentes.
+   - Conversão de colunas categóricas para numéricas.
+   - Remoção de caracteres especiais em colunas como `Installs` e `Price`.
+
+2. **Agrupamento e Estatísticas**:
+   - Geração de métricas como média, mediana e soma em agrupamentos por categorias.
+   - Análise de correlações entre variáveis numéricas.
+
+3. **Visualização de Dados**:
+   - Criação de gráficos de barras, dispersão e pizza utilizando matplotlib.
+   - Exploração dos insights por meio de representações visuais claras.
+
+---
+
+## Desafio ETL com a Tabela `actors.csv`
+
+O desafio de ETL consistiu em processar a tabela `actors.csv` sem o uso de bibliotecas como pandas ou csv. O processo foi dividido em cinco etapas principais:
+
+1. **Etapa 1**: Identificação do ator/atriz com o maior número de filmes e geração de um relatório com o nome e quantidade.
+2. **Etapa 2**: Cálculo da média de receita bruta dos filmes de maior bilheteria.
+3. **Etapa 3**: Determinação do ator/atriz com a maior média de receita por filme.
+4. **Etapa 4**: Contagem de frequência dos filmes de maior bilheteria no dataset.
+5. **Etapa 5**: Ordenação dos atores por receita total de bilheteria e geração de um relatório final.
+
+Os resultados foram salvos em arquivos `.txt` e analisados para validar os dados processados.
+
+---
+
+## Evidências
+
+Foram coletadas evidências do processo de análise e do desafio ETL, incluindo capturas de tela, códigos desenvolvidos e saídas geradas:
+
+- **Capturas de Tela**:
+  - ![Gráfico de Barras](../Sprint3/evidencias/graficobarras_top5.png)
+  - ![Grafico de linhas](../Sprint3/evidencias/graficolinha_reviews.png)
+  - ![desafio top 10](../Sprint3/evidencias/desafio_top10.png)
+
+- **Saídas do Desafio ETL**: [Clique aqui para ir a pasta de exercicios de ETL](../Sprint3/exercicios/ex_etl/)
+  - Arquivo `etapa-1.txt`: Contém o nome do ator com mais filmes.
+  - Arquivo `etapa-2.txt`: Contém a média de receita dos filmes.
+  - Arquivo `etapa-5.txt`: Relatório final ordenado por receita bruta.
+
+---
+
+## Certificados
+
+Durante esta sprint, concluímos o curso **AWS Partner: Economias na Nuvem AWS**, no qual foram abordados tópicos como:
+- Otimização de custos em soluções AWS.
+- Práticas recomendadas para gerenciar gastos com recursos em nuvem.
+- Estratégias para maximizar o uso de serviços sem comprometer a eficiência.
+
+O curso foi concluído com sucesso, e o certificado de conclusão foi adicionado como evidência.
+
+---
+
+## Conclusão
+
+A Sprint 3 foi altamente produtiva e desafiadora, proporcionando:
+1. Aprendizado prático em manipulação e análise de dados com Python.
+2. Desenvolvimento de habilidades em ETL manual, reforçando conceitos fundamentais.
+3. Consolidação de conhecimentos em economia de recursos na nuvem AWS.
+
+O aprendizado obtido contribuiu significativamente para aprimorar técnicas de análise e visualização de dados, preparando para desafios mais avançados em projetos futuros.
+
+---
