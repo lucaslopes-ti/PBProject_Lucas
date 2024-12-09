@@ -31,19 +31,19 @@ Foi necessário calcular o saldo a partir de lançamentos, onde cada lançamento
 
 O exercício envolveu a criação de uma função que realiza operações aritméticas e retorna o valor máximo. Utilizamos a função `eval` para executar dinamicamente as operações.
 
-[Veja o código completo para o exercício 4 aqui]../Sprint4/exercicios/ex04.py).
+[Veja o código completo para o exercício 4 aqui](../Sprint4/exercicios/ex04.py).
 
 ### Exercício 5: Processamento de Notas com CSV
 
 Foi necessário ler um arquivo CSV, processar as notas dos estudantes e calcular a média das 3 maiores. Para isso, utilizamos o módulo `csv` para fazer a leitura e a manipulação dos dados.
 
-[Veja o código completo para o exercício 5 aqui]../Sprint4/exercicios/ex05.py).
+[Veja o código completo para o exercício 5 aqui](../Sprint4/exercicios/ex05.py).
 
 ### Exercício 6: Produtos Acima da Média
 
 Neste exercício, foi necessário filtrar produtos cujo preço seja maior que a média, ordenando-os em ordem crescente. Utilizamos o `lambda` para fazer as comparações e `sorted` para ordenar.
 
-[Veja o código completo para o exercício 6 aqui]../Sprint4/exercicios/ex06.py).
+[Veja o código completo para o exercício 6 aqui](../Sprint4/exercicios/ex06.py).
 
 ### Exercício 7: Gerador de Números Pares
 
@@ -88,19 +88,27 @@ A reutilização de containers ajuda a economizar tempo e recursos, permitindo t
 ## **Evidências**
 
 - **Execução do container `carguru-container`:**
-  - (Insira uma captura de tela com o script `carguru.py` em execução).
+
+![carguru-container](../Sprint4/evidencias/imagem_inicializandodocker.png)
 
 - **Execução do container `mascarar-container`:**
-  - (Insira uma captura de tela mostrando a entrada da string e o hash SHA-1 gerado).
+
+![mascarar-container](../Sprint4/evidencias/imagem_etapa2.png)
 
 - **Comando `docker ps` para listar containers ativos:**
-  - (Insira uma captura de tela da listagem de containers).
-
+ 
+![docker ps](../Sprint4/evidencias/docker_finalizacao.png)
 ---
 
 ## **Certificados**
 
-![Certificado AWS](../Sprint4/certificados/LucasLopes_13246_3_6564982_1733426157_AWS Course Completion Certificate.pdf)
+Durante esta sprint, concluímos o curso AWS Partner: Credenciamento (Técnico), no qual foram abordados tópicos como:
+
+    -Fundamentos técnicos da AWS: Compreensão dos serviços e recursos fundamentais da plataforma AWS.
+    -Melhores práticas de implementação: Orientações para a implementação eficiente de soluções na nuvem.
+    -Gerenciamento de infraestrutura na AWS: Como configurar e gerenciar ambientes seguros e escaláveis na nuvem.
+
+O curso foi concluído com sucesso, e o certificado de conclusão foi adicionado como evidência.
 
 ---
 
