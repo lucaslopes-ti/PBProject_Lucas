@@ -30,8 +30,15 @@ print("Colunas no DataFrame:", df.columns)
 filtered_df = df[(df['NIVEL'].fillna(0).astype(int) == 1) & (df['REG_TRAB'] == 'DE')]
 
 # 4.2 Duas funções de agregação
-aggregation1 = df.groupby('CAMPUS')['MATR_SIAPE'].count()
-aggregation2 = df.groupby('CAMPUS')['COD_FUNCAO'].nunique()
+aggregation1 = df.groupby('CAMPUS')['MATR_SIAPE'].count().reset_index()
+aggregation2 = df.groupby('CAMPUS')['COD_FUNCAO'].nunique().reset_index()
+
+# Merge das agregações de volta ao DataFrame original
+df = pd.merge(df, aggregation1, on='CAMPUS', how='left', suffixes=('', '_MATR_SIAPE_COUNT'))
+df = pd.merge(df, aggregation2, on='CAMPUS', how='left', suffixes=('', '_COD_FUNCAO_UNIQUE'))
+
+# Renomear as colunas resultantes para maior clareza
+df.rename(columns={'MATR_SIAPE_MATR_SIAPE_COUNT': 'COUNT_MATR_SIAPE', 'COD_FUNCAO_COD_FUNCAO_UNIQUE': 'UNIQUE_COD_FUNCAO'}, inplace=True)
 
 # 4.3 Uma função condicional
 df['NOVA_COLUNA'] = df['TITULACAO'].apply(lambda x: 'Doutor' if x == 'D' else 'Outro')
