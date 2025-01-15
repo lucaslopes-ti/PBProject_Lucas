@@ -16,8 +16,8 @@ Sinta-se à vontade para explorar os meus trabalhos ao longo das Sprints!
 2. [Sprint 2](https://github.com/Boltzmann0/PBProject_Lucas/tree/main/Sprint2)
 3. [Sprint 3](https://github.com/Boltzmann0/PBProject_Lucas/tree/main/Sprint3)
 4. [Sprint 4](https://github.com/Boltzmann0/PBProject_Lucas/tree/main/Sprint4)
-5. [Sprint 5]
-6. [Sprint 6]
+5. [Sprint 5](https://github.com/Boltzmann0/PBProject_Lucas/tree/main/Sprint5)
+6. [Sprint 6](https://github.com/Boltzmann0/PBProject_Lucas/tree/main/Sprint6)
 7. [Sprint 7]
 8. [Sprint 8]
 9. [Sprint 9]
