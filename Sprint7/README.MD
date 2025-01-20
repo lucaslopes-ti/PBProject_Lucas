@@ -1,22 +1,96 @@
-# Apresentação
+# Resumo da Sprint 7
 
-Olá, sou **Lucas Lopes**, natural de Franca, São Paulo. Atualmente, estou cursando **Engenharia da Computação** na **UNIVESP** no 7 semestre. Tenho também formação como **Técnico em Informática** e **Matemática**, o que me proporciona uma visão interdisciplinar sobre tecnologia e matemática.
+## **Instruções/Informações/Anotações**
 
-Possuo experiência na área de tecnologia, atuando como **Técnico Help Desk** no **SESI**, e também com **Data Science**, desenvolvendo projetos que envolvem **análise de dados**, **IoT**, **Machine Learning** e **visualização de dados** com ferramentas como **Power BI**. Além disso, sou **concursado como tradutor e intérprete de Libras** e trabalho como **professor de ensino médio** na **SEE-SP**, com foco em **matemática**.
+Nesta sprint, o objetivo principal foi trabalhar com ingestão e transformação de dados utilizando serviços AWS como Lambda, S3, Glue e Spark. Além disso, consolidamos o conhecimento sobre integração de APIs, automação de pipelines e manipulação de dados em larga escala para análise.
 
-Meus hobbies incluem explorar viagens culturais, aprofundar-me em temas de **Inteligência Artificial**, **acessibilidade** e linguagens de programação. Também gosto de me manter atualizado sobre projetos inovadores em tecnologia e inclusão.
+---
 
-Sinta-se à vontade para explorar os meus trabalhos ao longo das Sprints!
+## **Exercícios**
 
-## Sprints
+### **Exercício 1: Contador de Palavras com PySpark**
+#### **Objetivo**
+Desenvolver um programa utilizando PySpark para contar palavras em um arquivo README e exibir as palavras mais frequentes.
 
-1. [Sprint 1](https://github.com/Boltzmann0/Project_Lucas/tree/main/Sprint1)
-2. [Sprint 2]
-3. [Sprint 3]
-4. [Sprint 4]
-5. [Sprint 5]
-6. [Sprint 6]
-7. [Sprint 7]
-8. [Sprint 8]
-9. [Sprint 9]
-10. [Sprint 10]
+#### **Etapas Realizadas**
+1. Configurado o ambiente local com PySpark.
+2. Lido o arquivo README e dividido o texto em palavras.
+3. Aplicado transformação para contar ocorrências de cada palavra.
+4. Exibido o resultado com as palavras mais frequentes em ordem decrescente.
+
+---
+
+### **Exercício 2: ETL com PySpark**
+
+Exercício 3: ETL com AWS Glue
+
+Objetivo
+
+Utilizar o AWS Glue para realizar ETL nos dados brutos da RAW Zone e salvá-los na Curated Zone.
+Etapas Realizadas
+
+    Configurado um Crawler no Glue para catalogar os dados brutos no S3.
+    Criado um Job no AWS Glue com PySpark para:
+        Remover dados inconsistentes.
+        Normalizar colunas (ex.: formato de data).
+        Salvar os dados transformados no formato Parquet.
+    Configurado o job para rodar periodicamente com triggers.
+
+---
+
+## **Desafio - Ingestão e Armazenamento de Dados com Lambda e S3**
+
+### **Introdução**
+
+O desafio foi focado na ingestão de dados da API TMDB e no armazenamento estruturado no S3, criando um pipeline automatizado com AWS Lambda. A proposta foi integrar dados de filmes e séries dos gêneros **Comédia** e **Animação**, lançados de 2000 até o presente.
+
+### **Objetivo**
+
+Criar um pipeline que consome dados da API TMDB, automatiza o upload no S3 e prepara os dados para futuras análises.
+
+### **Etapas do Desafio**
+
+1. **Configuração Inicial**
+   - Criado o bucket `data-lake-desafio` no S3 com as zonas:
+     - **RAW Zone**: Para dados brutos (JSON).
+     - **Curated Zone**: Para dados transformados.
+
+2. **Desenvolvimento da Função Lambda**
+   - Criada uma função Lambda para consumir dados da API TMDB.
+   - Configurado o caminho de salvamento: `raw/tmdb/json/movies_2000_to_2025.json`.
+
+3. **Configuração de Layers**
+   - Criada uma Layer no Lambda para incluir a biblioteca `requests`.
+
+4. **Automação com EventBridge**
+   - Configurado o AWS EventBridge para executar a Lambda periodicamente.
+
+5. **Validação**
+   - Dados foram salvos corretamente no S3 e estão prontos para transformação.
+
+**Evidências**:
+
+Execução do Lambda:
+
+![Lambda Execução](../Sprint7/evidencias/execucao_lambda_tmbd.png)
+
+Dados no S3:
+
+![S3 Dados](../Sprint7/evidencias/execucao_s3_tmdb.png)
+
+---
+
+## **Perguntas para a Dashboard**
+
+1. **Qual é a média das notas (vote_average) por ano e por gênero?**
+2. **Quais são os filmes mais populares em Comédia e Animação?**
+3. **Existe uma correlação entre o número de votos (vote_count) e a popularidade (popularity)?**
+4. **Quais são os idiomas predominantes nos filmes de cada gênero?**
+5. **Quais são os gêneros mais bem avaliados em média ao longo dos anos?**
+
+---
+
+## **Impressões Pessoais**
+
+Achei esta sprint extremamente produtiva e desafiadora, principalmente ao integrar diversos serviços AWS, como Lambda, S3, Glue e Spark. As dificuldades, como manipulação de dados e configuração de permissões, proporcionaram aprendizados valiosos. A prática consolidou minha habilidade de criar pipelines escaláveis e integrações eficientes na nuvem.
+
