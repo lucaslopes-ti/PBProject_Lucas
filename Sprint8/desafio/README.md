@@ -140,10 +140,9 @@ Essa transformação permite que os dados sejam organizados e consultados de man
 ![evidencia](../evidencias/scritp_glue_json.png)
 
 
-
 4. Consulta no Athena
 
-
+![evidencia](../evidencias/evidencia_athena.png)
 
 ### **7. Conclusão**
 
