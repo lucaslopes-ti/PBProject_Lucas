@@ -22,7 +22,7 @@ df_tmdb = spark.read.parquet(f"{TRUSTED_TMDB_PATH}*/*/*/")
 df_local_movies = spark.read.parquet(f"{TRUSTED_LOCAL_PATH}Movies/")
 df_local_series = spark.read.parquet(f"{TRUSTED_LOCAL_PATH}Series/")
 
-# ✅ Renomeando colunas para evitar conflito
+# Renomeando colunas para evitar conflito
 df_tmdb = df_tmdb.withColumnRenamed("title", "tituloPrincipal") \
                  .withColumnRenamed("release_date", "dataLancamento") \
                  .withColumnRenamed("vote_average", "notaMedia") \
@@ -36,7 +36,7 @@ df_local_movies = df_local_movies.withColumnRenamed("tituloPincipal", "tituloPri
 df_local_series = df_local_series.withColumnRenamed("tituloPincipal", "tituloPrincipal") \
                                  .withColumnRenamed("tituloOriginal", "tituloOriginalLocal")
 
-# ✅ Unir os dados corrigindo colunas diferentes
+# Unir os dados corrigindo colunas diferentes
 df_filmes = df_tmdb.unionByName(df_local_movies, allowMissingColumns=True)
 df_filmes = df_filmes.unionByName(df_local_series, allowMissingColumns=True)
 
