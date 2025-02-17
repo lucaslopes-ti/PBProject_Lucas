@@ -15,14 +15,33 @@ TRUSTED_LOCAL_PATH = "s3://data-lake-desafio/Trusted/Local/Parquet/"
 # Caminho da Refined Zone
 REFINED_PATH = "s3://data-lake-desafio/Refined/"
 
-# Carregar dados do TMDB
+# 🔹 Carregar dados do TMDB
 df_tmdb = spark.read.parquet(f"{TRUSTED_TMDB_PATH}*/*/*/")
 
-# Carregar dados locais (Movies e Series)
-df_local_movies = spark.read.parquet(f"{TRUSTED_LOCAL_PATH}Movies/")
-df_local_series = spark.read.parquet(f"{TRUSTED_LOCAL_PATH}Series/")
+# 🔹 Carregar dados locais (Movies e Series) 
+df_local_movies = spark.read.option("header", "true").option("delimiter", "|").csv(f"{TRUSTED_LOCAL_PATH}Movies/")
+df_local_series = spark.read.option("header", "true").option("delimiter", "|").csv(f"{TRUSTED_LOCAL_PATH}Series/")
 
-# Renomeando colunas para evitar conflito
+print("Schema do TMDB:")
+df_tmdb.printSchema()
+
+print("Schema dos Filmes Locais:")
+df_local_movies.printSchema()
+
+print("Schema das Séries Locais:")
+df_local_series.printSchema()
+
+df_filmes = df_tmdb.selectExpr("id", "tituloPrincipal", "dataLancamento", "notaMedia", "numeroVotos", "popularidade", "idiomaOriginal")
+
+df_local_movies = df_local_movies.selectExpr("id", "tituloPrincipal", "tituloOriginalLocal", "anoLancamento", "genero", "notaMedia", "numeroVotos", "generoArtista", "personagem", "nomeArtista", "profissao")
+
+df_local_series = df_local_series.selectExpr("id", "tituloPrincipal", "tituloOriginalLocal", "anoLancamento", "genero", "notaMedia", "numeroVotos", "generoArtista", "personagem", "nomeArtista", "profissao")
+
+df_filmes = df_filmes.unionByName(df_local_movies, allowMissingColumns=True)
+df_filmes = df_filmes.unionByName(df_local_series, allowMissingColumns=True)
+
+
+# Renomear colunas para evitar conflitos entre TMDB e Local
 df_tmdb = df_tmdb.withColumnRenamed("title", "tituloPrincipal") \
                  .withColumnRenamed("release_date", "dataLancamento") \
                  .withColumnRenamed("vote_average", "notaMedia") \
@@ -36,41 +55,45 @@ df_local_movies = df_local_movies.withColumnRenamed("tituloPincipal", "tituloPri
 df_local_series = df_local_series.withColumnRenamed("tituloPincipal", "tituloPrincipal") \
                                  .withColumnRenamed("tituloOriginal", "tituloOriginalLocal")
 
-# Unir os dados corrigindo colunas diferentes
+
+# 🔹 Adicionando a origem dos dados
+df_tmdb = df_tmdb.withColumn("origem", F.lit("TMDB"))
+df_local_movies = df_local_movies.withColumn("origem", F.lit("Local"))
+df_local_series = df_local_series.withColumn("origem", F.lit("Local"))
+
+# 🔹 Unindo os dados de TMDB + CSVs Locais
 df_filmes = df_tmdb.unionByName(df_local_movies, allowMissingColumns=True)
 df_filmes = df_filmes.unionByName(df_local_series, allowMissingColumns=True)
 
-# Verificando Schema final antes do processamento
-df_filmes.printSchema()
+# 🔹 Criando um ID único para cada filme
+df_filmes = df_filmes.withColumn("id_filme", F.monotonically_increasing_id())
 
-# Convertendo datas
-df_filmes = df_filmes.withColumn("dataLancamento", F.to_date("dataLancamento", "yyyy-MM-dd"))
+# 🔹 Criando a DimAtores
+dim_atores = df_filmes.selectExpr("id_filme", "nomeArtista as nome").distinct()
+dim_atores = dim_atores.withColumn("id_ator", F.monotonically_increasing_id())
+dim_atores = dim_atores.select("id_ator", "nome", "id_filme")
 
-# Criar tabelas dimensão
-dim_atores = df_filmes.selectExpr("id as id_ator", "nomeArtista as nome").distinct()
-dim_diretores = df_filmes.selectExpr("id as id_diretor", "profissao").filter(F.col("profissao") == "Director").distinct()
-dim_roteiristas = df_filmes.selectExpr("id as id_roteirista", "profissao").filter(F.col("profissao") == "Writer").distinct()
-dim_personagens = df_filmes.selectExpr("id as id_personagem", "personagem").distinct()
-dim_colecoes = df_filmes.selectExpr("id as id_colecao", "tituloPrincipal as nome_colecao").distinct()
-dim_datas = df_filmes.selectExpr("year(dataLancamento) as ano", "month(dataLancamento) as mes", "day(dataLancamento) as dia").distinct()
+# 🔹 Criando a DimPersonagens
+dim_personagens = df_filmes.selectExpr("id_filme", "personagem").distinct()
+dim_personagens = dim_personagens.withColumn("id_personagem", F.monotonically_increasing_id())
+dim_personagens = dim_personagens.select("id_personagem", "personagem", "id_filme")
 
-# Criar tabela fato
-fato_filmes = df_filmes.select(
-    "id",
-    "genero",
-    "notaMedia",
-    "numeroVotos",
-    "popularidade",
-    "idiomaOriginal"
-)
+# 🔹 Crianndo a DimDiretores 
+dim_diretores = df_filmes.selectExpr("id_filme", "profissao", "nomeArtista") \
+                         .filter(F.col("profissao") == "Director").distinct()
+dim_diretores = dim_diretores.withColumn("id_diretor", F.monotonically_increasing_id())
+dim_diretores = dim_diretores.select("id_diretor", "nomeArtista", "id_filme")
 
-# Salvando tabelas na camada Refined
+# 🔹 Criar a DimRoteiristas
+dim_roteiristas = df_filmes.selectExpr("id_filme", "profissao", "nomeArtista") \
+                           .filter(F.col("profissao") == "Writer").distinct()
+dim_roteiristas = dim_roteiristas.withColumn("id_roteirista", F.monotonically_increasing_id())
+dim_roteiristas = dim_roteiristas.select("id_roteirista", "nomeArtista", "id_filme")
+
+# 🔹 Salvando tabelas corrigidas na camada Refined
 dim_atores.write.mode("overwrite").parquet(f"{REFINED_PATH}DimAtores/")
+dim_personagens.write.mode("overwrite").parquet(f"{REFINED_PATH}DimPersonagens/")
 dim_diretores.write.mode("overwrite").parquet(f"{REFINED_PATH}DimDiretores/")
 dim_roteiristas.write.mode("overwrite").parquet(f"{REFINED_PATH}DimRoteiristas/")
-dim_personagens.write.mode("overwrite").parquet(f"{REFINED_PATH}DimPersonagens/")
-dim_colecoes.write.mode("overwrite").parquet(f"{REFINED_PATH}DimColecoes/")
-dim_datas.write.mode("overwrite").parquet(f"{REFINED_PATH}DimDatas/")
-fato_filmes.write.mode("overwrite").parquet(f"{REFINED_PATH}FatoFilmes/")
 
-print("Processamento da camada Refined concluído com sucesso!")
+print("Processamento das dimensões concluído com sucesso!")
