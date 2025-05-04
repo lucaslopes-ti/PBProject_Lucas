@@ -1,6 +1,6 @@
 import requests
 
-API_KEY = '1e8aa6dc5579d131ff74414300b05165'
+API_KEY = 'YOURAPIKEYHERE'
 BASE_URL = 'https://api.themoviedb.org/3'
 
 def get_ghibli_movies():
