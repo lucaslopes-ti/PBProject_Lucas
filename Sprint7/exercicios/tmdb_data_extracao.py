@@ -2,7 +2,7 @@ import requests
 import pandas as pd
 
 
-api_key = "1e8aa6dc5579d131ff74414300b05165"
+api_key = "YOURAPIKEYHERE"
 
 # URL base da API TMDB
 base_url = "https://api.themoviedb.org/3"
